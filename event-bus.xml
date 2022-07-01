@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="org.greenrobot.eventbus.MainThreadSupport" />
+			<role name="FactoryMethod()" element="org.greenrobot.eventbus.MainThreadSupport::createPoster(org.greenrobot.eventbus.EventBus):org.greenrobot.eventbus.Poster" />
+		</instance>
+		<instance>
+			<role name="Creator" element="org.greenrobot.eventbus.meta.SubscriberInfoIndex" />
+			<role name="FactoryMethod()" element="org.greenrobot.eventbus.meta.SubscriberInfoIndex::getSubscriberInfo(java.lang.Class):org.greenrobot.eventbus.meta.SubscriberInfo" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.greenrobot.eventbus.android.AndroidComponents" />
+			<role name="uniqueInstance" element="org.greenrobot.eventbus.android.AndroidComponents::implementation:org.greenrobot.eventbus.android.AndroidComponents" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.greenrobot.eventbus.EventBus" />
+			<role name="uniqueInstance" element="org.greenrobot.eventbus.EventBus::defaultInstance:org.greenrobot.eventbus.EventBus" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adapter" element="org.greenrobot.eventbus.AsyncPoster" />
+			<role name="Adaptee" element="org.greenrobot.eventbus.EventBus" />
+			<role name="adaptee" element="org.greenrobot.eventbus.AsyncPoster::eventBus:org.greenrobot.eventbus.EventBus" />
+			<role name="Request()" element="org.greenrobot.eventbus.AsyncPoster::enqueue(org.greenrobot.eventbus.Subscription, java.lang.Object):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.greenrobot.eventbus.AsyncPoster" />
+			<role name="Adaptee" element="org.greenrobot.eventbus.PendingPostQueue" />
+			<role name="adaptee" element="org.greenrobot.eventbus.AsyncPoster::queue:org.greenrobot.eventbus.PendingPostQueue" />
+			<role name="Request()" element="org.greenrobot.eventbus.AsyncPoster::enqueue(org.greenrobot.eventbus.Subscription, java.lang.Object):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.greenrobot.eventbus.BackgroundPoster" />
+			<role name="Adaptee" element="org.greenrobot.eventbus.EventBus" />
+			<role name="adaptee" element="org.greenrobot.eventbus.BackgroundPoster::eventBus:org.greenrobot.eventbus.EventBus" />
+			<role name="Request()" element="org.greenrobot.eventbus.BackgroundPoster::enqueue(org.greenrobot.eventbus.Subscription, java.lang.Object):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.greenrobot.eventbus.BackgroundPoster" />
+			<role name="Adaptee" element="org.greenrobot.eventbus.PendingPostQueue" />
+			<role name="adaptee" element="org.greenrobot.eventbus.BackgroundPoster::queue:org.greenrobot.eventbus.PendingPostQueue" />
+			<role name="Request()" element="org.greenrobot.eventbus.BackgroundPoster::enqueue(org.greenrobot.eventbus.Subscription, java.lang.Object):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.greenrobot.eventbus.HandlerPoster" />
+			<role name="Adaptee" element="org.greenrobot.eventbus.PendingPostQueue" />
+			<role name="adaptee" element="org.greenrobot.eventbus.HandlerPoster::queue:org.greenrobot.eventbus.PendingPostQueue" />
+			<role name="Request()" element="org.greenrobot.eventbus.HandlerPoster::enqueue(org.greenrobot.eventbus.Subscription, java.lang.Object):void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="org.greenrobot.eventbus.EventBus" />
+			<role name="State" element="org.greenrobot.eventbus.Poster" />
+			<role name="state" element="org.greenrobot.eventbus.EventBus::mainThreadPoster:org.greenrobot.eventbus.Poster" />
+			<role name="Request()" element="org.greenrobot.eventbus.EventBus::postToSubscription(org.greenrobot.eventbus.Subscription, java.lang.Object, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.greenrobot.eventbus.EventBus" />
+			<role name="State" element="org.greenrobot.eventbus.Logger" />
+			<role name="state" element="org.greenrobot.eventbus.EventBus::logger:org.greenrobot.eventbus.Logger" />
+			<role name="Request()" element="org.greenrobot.eventbus.EventBus::unregister(java.lang.Object):void" />
+			<role name="Request()" element="org.greenrobot.eventbus.EventBus::postSingleEvent(java.lang.Object, org.greenrobot.eventbus.EventBus$PostingThreadState):void" />
+			<role name="Request()" element="org.greenrobot.eventbus.EventBus::handleSubscriberException(org.greenrobot.eventbus.Subscription, java.lang.Object, java.lang.Throwable):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.greenrobot.eventbus.EventBus" />
+			<role name="State" element="org.greenrobot.eventbus.MainThreadSupport" />
+			<role name="state" element="org.greenrobot.eventbus.EventBus::mainThreadSupport:org.greenrobot.eventbus.MainThreadSupport" />
+			<role name="Request()" element="org.greenrobot.eventbus.EventBus::isMainThread():boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method" />
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

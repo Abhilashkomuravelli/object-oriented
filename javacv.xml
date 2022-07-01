@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype">
+		<instance>
+			<role name="Client" element="org.bytedeco.javacv.GNImageAligner" />
+			<role name="Prototype" element="org.bytedeco.javacv.ImageTransformer$Parameters" />
+			<role name="prototype" element="org.bytedeco.javacv.GNImageAligner::parameters:org.bytedeco.javacv.ImageTransformer$Parameters" />
+			<role name="prototype" element="org.bytedeco.javacv.GNImageAligner::parametersArray:org.bytedeco.javacv.ImageTransformer$Parameters[]" />
+			<role name="prototype" element="org.bytedeco.javacv.GNImageAligner::tempParameters:org.bytedeco.javacv.ImageTransformer$Parameters[]" />
+			<role name="Operation()" element="org.bytedeco.javacv.GNImageAligner(org.bytedeco.javacv.ImageTransformer, org.bytedeco.javacv.ImageTransformer$Parameters)" />
+		</instance>
+	</pattern>
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.bytedeco.javacv.CanvasFrame" />
+			<role name="uniqueInstance" element="org.bytedeco.javacv.CanvasFrame::global:org.bytedeco.javacv.CanvasFrame" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.bytedeco.javacv.FFmpegLogCallback" />
+			<role name="uniqueInstance" element="org.bytedeco.javacv.FFmpegLogCallback::instance:org.bytedeco.javacv.FFmpegLogCallback" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.bytedeco.javacv.GLCanvasFrame" />
+			<role name="uniqueInstance" element="org.bytedeco.javacv.GLCanvasFrame::canvasFrame:org.bytedeco.javacv.GLCanvasFrame" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.bytedeco.javacv.JavaCvErrorCallback" />
+			<role name="uniqueInstance" element="org.bytedeco.javacv.JavaCvErrorCallback::instance:org.bytedeco.javacv.JavaCvErrorCallback" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="cl.eye.CLCamera" />
+			<role name="Adapter" element="org.bytedeco.javacv.PS3EyeFrameGrabber" />
+			<role name="adaptee" element="org.bytedeco.javacv.PS3EyeFrameGrabber::camera:cl.eye.CLCamera" />
+			<role name="Request()" element="org.bytedeco.javacv.PS3EyeFrameGrabber::start():void" />
+			<role name="Request()" element="org.bytedeco.javacv.PS3EyeFrameGrabber::stop():void" />
+			<role name="Request()" element="org.bytedeco.javacv.PS3EyeFrameGrabber::release():void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.bytedeco.javacv.PS3EyeFrameGrabber$Triggered" />
+			<role name="Adapter" element="org.bytedeco.javacv.PS3EyeFrameGrabber" />
+			<role name="adaptee" element="org.bytedeco.javacv.PS3EyeFrameGrabber::triggered:org.bytedeco.javacv.PS3EyeFrameGrabber$Triggered" />
+			<role name="Request()" element="org.bytedeco.javacv.PS3EyeFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.bytedeco.javacv.JavaCVCL" />
+			<role name="Adapter" element="org.bytedeco.javacv.ProCamTransformerCL" />
+			<role name="adaptee" element="org.bytedeco.javacv.ProCamTransformerCL::context:org.bytedeco.javacv.JavaCVCL" />
+			<role name="Request()" element="org.bytedeco.javacv.ProCamTransformerCL::transform(com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, org.bytedeco.javacv.ImageTransformer$Parameters[], boolean[], org.bytedeco.javacv.ImageTransformerCL$InputData, org.bytedeco.javacv.ImageTransformerCL$OutputData):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.bytedeco.javacv.JavaCVCL" />
+			<role name="Adapter" element="org.bytedeco.javacv.ProjectiveColorTransformerCL" />
+			<role name="adaptee" element="org.bytedeco.javacv.ProjectiveColorTransformerCL::context:org.bytedeco.javacv.JavaCVCL" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectiveColorTransformerCL::transform(com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, org.bytedeco.javacv.ImageTransformer$Parameters[], boolean[], org.bytedeco.javacv.ImageTransformerCL$InputData, org.bytedeco.javacv.ImageTransformerCL$OutputData):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.bytedeco.javacv.JavaCVCL" />
+			<role name="Adapter" element="org.bytedeco.javacv.ProjectiveTransformerCL" />
+			<role name="adaptee" element="org.bytedeco.javacv.ProjectiveTransformerCL::context:org.bytedeco.javacv.JavaCVCL" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectiveTransformerCL::transform(com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, com.jogamp.opencl.CLImage2d, org.bytedeco.javacv.ImageTransformer$Parameters[], boolean[], org.bytedeco.javacv.ImageTransformerCL$InputData, org.bytedeco.javacv.ImageTransformerCL$OutputData):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.bytedeco.javacv.JavaCVCL" />
+			<role name="Adapter" element="org.bytedeco.javacv.GNImageAlignerCL" />
+			<role name="adaptee" element="org.bytedeco.javacv.GNImageAlignerCL::context:org.bytedeco.javacv.JavaCVCL" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAlignerCL::setTemplateImageCL(com.jogamp.opencl.CLImage2d, double[]):void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAlignerCL::setTargetImageCL(com.jogamp.opencl.CLImage2d):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.bytedeco.javacv.DC1394FrameGrabber" />
+			<role name="Adaptee" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="adaptee" element="org.bytedeco.javacv.DC1394FrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.DC1394FrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.bytedeco.javacv.FlyCapture2FrameGrabber" />
+			<role name="Adaptee" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="adaptee" element="org.bytedeco.javacv.FlyCapture2FrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.FlyCapture2FrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.bytedeco.javacv.IPCameraFrameGrabber" />
+			<role name="Adaptee" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="adaptee" element="org.bytedeco.javacv.IPCameraFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.IPCameraFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.bytedeco.javacv.OpenKinectFrameGrabber" />
+			<role name="Adaptee" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="adaptee" element="org.bytedeco.javacv.OpenKinectFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.OpenKinectFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.bytedeco.javacv.PS3EyeFrameGrabber" />
+			<role name="Adaptee" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="adaptee" element="org.bytedeco.javacv.PS3EyeFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.PS3EyeFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.bytedeco.javacv.RealSenseFrameGrabber" />
+			<role name="Adaptee" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="adaptee" element="org.bytedeco.javacv.RealSenseFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.RealSenseFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.bytedeco.javacv.VideoInputFrameGrabber" />
+			<role name="Adaptee" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="adaptee" element="org.bytedeco.javacv.VideoInputFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.VideoInputFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="org.bytedeco.javacv.OpenCVFrameGrabber" />
+			<role name="Adaptee" element="org.bytedeco.javacv.OpenCVFrameConverter" />
+			<role name="adaptee" element="org.bytedeco.javacv.OpenCVFrameGrabber::converter:org.bytedeco.javacv.OpenCVFrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.OpenCVFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.bytedeco.javacv.ImageTransformer$Parameters" />
+			<role name="Adapter" element="org.bytedeco.javacv.GNImageAligner" />
+			<role name="adaptee" element="org.bytedeco.javacv.GNImageAligner::parameters:org.bytedeco.javacv.ImageTransformer$Parameters" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::setParameters(org.bytedeco.javacv.ImageTransformer$Parameters):void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::iterate(double[]):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.bytedeco.javacv.ImageTransformer" />
+			<role name="Adapter" element="org.bytedeco.javacv.GNImageAligner" />
+			<role name="adaptee" element="org.bytedeco.javacv.GNImageAligner::transformer:org.bytedeco.javacv.ImageTransformer" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::setTargetImage(org.bytedeco.opencv.opencv_core.IplImage):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="org.bytedeco.javacv.OpenCVFrameConverter$ToMat" />
+			<role name="Adapter" element="org.bytedeco.javacv.OpenCVFrameRecorder" />
+			<role name="adaptee" element="org.bytedeco.javacv.OpenCVFrameRecorder::converter:org.bytedeco.javacv.OpenCVFrameConverter$ToMat" />
+			<role name="Request()" element="org.bytedeco.javacv.OpenCVFrameRecorder::record(org.bytedeco.javacv.Frame):void" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator" />
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="State" element="org.bytedeco.javacv.FrameGrabber" />
+			<role name="Context" element="org.bytedeco.javacv.FrameGrabber$Array" />
+			<role name="state" element="org.bytedeco.javacv.FrameGrabber$Array::frameGrabbers:org.bytedeco.javacv.FrameGrabber[]" />
+			<role name="Request()" element="org.bytedeco.javacv.FrameGrabber$Array::start():void" />
+			<role name="Request()" element="org.bytedeco.javacv.FrameGrabber$Array::stop():void" />
+			<role name="Request()" element="org.bytedeco.javacv.FrameGrabber$Array::trigger():void" />
+			<role name="Request()" element="org.bytedeco.javacv.FrameGrabber$Array::grab():org.bytedeco.javacv.Frame[]" />
+			<role name="Request()" element="org.bytedeco.javacv.FrameGrabber$Array::release():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.CameraDevice" />
+			<role name="State" element="org.bytedeco.javacv.CameraDevice$Settings" />
+			<role name="state" element="org.bytedeco.javacv.CameraDevice::settings:org.bytedeco.javacv.CameraDevice$Settings" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice::setSettings(org.bytedeco.javacv.ProjectiveDevice$Settings):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice::createFrameGrabber():org.bytedeco.javacv.FrameGrabber" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.DC1394FrameGrabber" />
+			<role name="State" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="state" element="org.bytedeco.javacv.DC1394FrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.DC1394FrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.FlyCapture2FrameGrabber" />
+			<role name="State" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="state" element="org.bytedeco.javacv.FlyCapture2FrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.FlyCapture2FrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.IPCameraFrameGrabber" />
+			<role name="State" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="state" element="org.bytedeco.javacv.IPCameraFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.IPCameraFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.OpenKinectFrameGrabber" />
+			<role name="State" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="state" element="org.bytedeco.javacv.OpenKinectFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.OpenKinectFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.PS3EyeFrameGrabber" />
+			<role name="State" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="state" element="org.bytedeco.javacv.PS3EyeFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.PS3EyeFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.RealSense2FrameGrabber" />
+			<role name="State" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="state" element="org.bytedeco.javacv.RealSense2FrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.RealSense2FrameGrabber::grabCVFrame(int, int, int, int):org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.RealSenseFrameGrabber" />
+			<role name="State" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="state" element="org.bytedeco.javacv.RealSenseFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.RealSenseFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.VideoInputFrameGrabber" />
+			<role name="State" element="org.bytedeco.javacv.FrameConverter" />
+			<role name="state" element="org.bytedeco.javacv.VideoInputFrameGrabber::converter:org.bytedeco.javacv.FrameConverter" />
+			<role name="Request()" element="org.bytedeco.javacv.VideoInputFrameGrabber::grab():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.ProjectorDevice" />
+			<role name="State" element="org.bytedeco.javacv.ProjectorDevice$Settings" />
+			<role name="state" element="org.bytedeco.javacv.ProjectorDevice::settings:org.bytedeco.javacv.ProjectorDevice$Settings" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice::setSettings(org.bytedeco.javacv.ProjectiveDevice$Settings):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice::createCanvasFrame():org.bytedeco.javacv.CanvasFrame" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.GNImageAligner" />
+			<role name="State" element="org.bytedeco.javacv.ImageTransformer$Parameters" />
+			<role name="state" element="org.bytedeco.javacv.GNImageAligner::parameters:org.bytedeco.javacv.ImageTransformer$Parameters" />
+			<role name="state" element="org.bytedeco.javacv.GNImageAligner::priorParameters:org.bytedeco.javacv.ImageTransformer$Parameters" />
+			<role name="state" element="org.bytedeco.javacv.GNImageAligner::tempParameters:org.bytedeco.javacv.ImageTransformer$Parameters[]" />
+			<role name="state" element="org.bytedeco.javacv.GNImageAligner::parametersArray:org.bytedeco.javacv.ImageTransformer$Parameters[]" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::setParameters(org.bytedeco.javacv.ImageTransformer$Parameters):void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::setPriorParameters(org.bytedeco.javacv.ImageTransformer$Parameters):void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::iterate(double[]):boolean" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::doHessianGradient(double[]):void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::doRegularization(double[]):void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::doResidual():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.bytedeco.javacv.GNImageAligner" />
+			<role name="State" element="org.bytedeco.javacv.ImageTransformer" />
+			<role name="state" element="org.bytedeco.javacv.GNImageAligner::transformer:org.bytedeco.javacv.ImageTransformer" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::setTargetImage(org.bytedeco.opencv.opencv_core.IplImage):void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::doHessianGradient(double[]):void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::doRoi():void" />
+			<role name="Request()" element="org.bytedeco.javacv.GNImageAligner::doResidual():void" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.bytedeco.javacv.FrameFilter" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameFilter::close():void" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameFilter::restart():void" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameFilter::flush():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.bytedeco.javacv.FrameGrabber" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameGrabber::close():void" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameGrabber::grabFrame():org.bytedeco.javacv.Frame" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameGrabber::restart():void" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameGrabber::flush():void" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameGrabber::grabAtFrameRate():org.bytedeco.javacv.Frame" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.bytedeco.javacv.FrameRecorder" />
+			<role name="TemplateMethod()" element="org.bytedeco.javacv.FrameRecorder::close():void" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings" />
+			<role name="RealSubject" element="org.bytedeco.javacv.CameraDevice$SettingsImplementation" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getDeviceNumber():java.lang.Integer" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setDeviceNumber(java.lang.Integer):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getDeviceFile():java.io.File" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setDeviceFile(java.io.File):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getDeviceFilename():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setDeviceFilename(java.lang.String):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getDevicePath():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setDevicePath(java.lang.String):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getFrameGrabber():java.lang.Class" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setFrameGrabber(java.lang.Class):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getDescription():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getFormat():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setFormat(java.lang.String):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getImageWidth():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setImageWidth(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getImageHeight():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setImageHeight(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getFrameRate():double" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setFrameRate(double):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::isTriggerMode():boolean" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setTriggerMode(boolean):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getBitsPerPixel():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setBitsPerPixel(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getImageMode():org.bytedeco.javacv.FrameGrabber$ImageMode" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setImageMode(org.bytedeco.javacv.FrameGrabber$ImageMode):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getTimeout():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setTimeout(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::getNumBuffers():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setNumBuffers(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::isDeinterlace():boolean" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibratedSettings::setDeinterlace(boolean):void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings" />
+			<role name="RealSubject" element="org.bytedeco.javacv.CameraDevice$SettingsImplementation" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getDeviceNumber():java.lang.Integer" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setDeviceNumber(java.lang.Integer):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getDeviceFile():java.io.File" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setDeviceFile(java.io.File):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getDeviceFilename():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setDeviceFilename(java.lang.String):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getDevicePath():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setDevicePath(java.lang.String):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getFrameGrabber():java.lang.Class" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setFrameGrabber(java.lang.Class):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getDescription():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getFormat():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setFormat(java.lang.String):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getImageWidth():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setImageWidth(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getImageHeight():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setImageHeight(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getFrameRate():double" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setFrameRate(double):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::isTriggerMode():boolean" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setTriggerMode(boolean):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getBitsPerPixel():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setBitsPerPixel(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getImageMode():org.bytedeco.javacv.FrameGrabber$ImageMode" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setImageMode(org.bytedeco.javacv.FrameGrabber$ImageMode):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getTimeout():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setTimeout(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::getNumBuffers():int" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setNumBuffers(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::isDeinterlace():boolean" />
+			<role name="Request()" element="org.bytedeco.javacv.CameraDevice$CalibrationSettings::setDeinterlace(boolean):void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings" />
+			<role name="RealSubject" element="org.bytedeco.javacv.ProjectorDevice$SettingsImplementation" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::getScreenNumber():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::setScreenNumber(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::getLatency():long" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::setLatency(long):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::getDescription():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::getImageWidth():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::setImageWidth(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::getImageHeight():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::setImageHeight(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::getBitDepth():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::setBitDepth(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::getRefreshRate():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::setRefreshRate(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::isUseOpenGL():boolean" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibratedSettings::setUseOpenGL(boolean):void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings" />
+			<role name="RealSubject" element="org.bytedeco.javacv.ProjectorDevice$SettingsImplementation" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::getScreenNumber():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::setScreenNumber(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::getLatency():long" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::setLatency(long):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::getDescription():java.lang.String" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::getImageWidth():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::setImageWidth(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::getImageHeight():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::setImageHeight(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::getBitDepth():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::setBitDepth(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::getRefreshRate():int" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::setRefreshRate(int):void" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::isUseOpenGL():boolean" />
+			<role name="Request()" element="org.bytedeco.javacv.ProjectorDevice$CalibrationSettings::setUseOpenGL(boolean):void" />
+		</instance>
+		<instance>
+			<role name="Proxy" element="org.bytedeco.javacv.ProCamTransformer$Parameters" />
+			<role name="RealSubject" element="org.bytedeco.javacv.ProjectiveColorTransformer$Parameters" />
+			<role name="Request()" element="org.bytedeco.javacv.ProCamTransformer$Parameters::get(int):double" />
+			<role name="Request()" element="org.bytedeco.javacv.ProCamTransformer$Parameters::set(int, double):void" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="com.jayway.jsonpath.Configuration$Defaults" />
+			<role name="FactoryMethod()" element="com.jayway.jsonpath.Configuration$Defaults::jsonProvider():com.jayway.jsonpath.spi.json.JsonProvider" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.jayway.jsonpath.internal.Path" />
+			<role name="FactoryMethod()" element="com.jayway.jsonpath.internal.Path::evaluate(java.lang.Object, java.lang.Object, com.jayway.jsonpath.Configuration, boolean):com.jayway.jsonpath.internal.EvaluationContext" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.jayway.jsonpath.ParseContext" />
+			<role name="FactoryMethod()" element="com.jayway.jsonpath.ParseContext::parse(java.lang.Object):com.jayway.jsonpath.DocumentContext" />
+			<role name="FactoryMethod()" element="com.jayway.jsonpath.ParseContext::parse(java.lang.String):com.jayway.jsonpath.DocumentContext" />
+			<role name="FactoryMethod()" element="com.jayway.jsonpath.ParseContext::parseUtf8(byte[]):com.jayway.jsonpath.DocumentContext" />
+			<role name="FactoryMethod()" element="com.jayway.jsonpath.ParseContext::parse(java.io.InputStream, java.lang.String):com.jayway.jsonpath.DocumentContext" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="com.jayway.jsonpath.internal.DefaultsImpl" />
+			<role name="uniqueInstance" element="com.jayway.jsonpath.internal.DefaultsImpl::INSTANCE:com.jayway.jsonpath.internal.DefaultsImpl" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.jayway.jsonpath.internal.filter.ValueNodes$NumberNode" />
+			<role name="uniqueInstance" element="com.jayway.jsonpath.internal.filter.ValueNodes$NumberNode::NAN:com.jayway.jsonpath.internal.filter.ValueNodes$NumberNode" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.jayway.jsonpath.internal.PathRef" />
+			<role name="uniqueInstance" element="com.jayway.jsonpath.internal.PathRef::NO_OP:com.jayway.jsonpath.internal.PathRef" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.jayway.jsonpath.spi.cache.CacheProvider" />
+			<role name="uniqueInstance" element="com.jayway.jsonpath.spi.cache.CacheProvider::instance:com.jayway.jsonpath.spi.cache.CacheProvider" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.jayway.jsonpath.spi.json.TapestryJsonProvider" />
+			<role name="uniqueInstance" element="com.jayway.jsonpath.spi.json.TapestryJsonProvider::INSTANCE:com.jayway.jsonpath.spi.json.TapestryJsonProvider" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.Configuration" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.ParseContextImpl" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.ParseContextImpl::configuration:com.jayway.jsonpath.Configuration" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.ParseContextImpl::parse(java.lang.String):com.jayway.jsonpath.DocumentContext" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.ParseContextImpl::parseUtf8(byte[]):com.jayway.jsonpath.DocumentContext" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.ParseContextImpl::parse(java.io.InputStream, java.lang.String):com.jayway.jsonpath.DocumentContext" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.internal.path.RootPathToken" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.CompiledPath" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.CompiledPath::root:com.jayway.jsonpath.internal.path.RootPathToken" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.CompiledPath::evaluate(java.lang.Object, java.lang.Object, com.jayway.jsonpath.Configuration, boolean):com.jayway.jsonpath.internal.EvaluationContext" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.CompiledPath::isDefinite():boolean" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.CompiledPath::isFunctionPath():boolean" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="Adaptee" element="com.jayway.jsonpath.Configuration" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl::configuration:com.jayway.jsonpath.Configuration" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl::getPathList():java.util.List" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.internal.path.PredicatePathToken" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.ScanPathToken$FilterPathTokenPredicate" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.ScanPathToken$FilterPathTokenPredicate::predicatePathToken:com.jayway.jsonpath.internal.path.PredicatePathToken" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.ScanPathToken$FilterPathTokenPredicate::matches(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.internal.path.PropertyPathToken" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.ScanPathToken$PropertyPathTokenPredicate" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.ScanPathToken$PropertyPathTokenPredicate::propertyPathToken:com.jayway.jsonpath.internal.path.PropertyPathToken" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.ScanPathToken$PropertyPathTokenPredicate::matches(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.ScanPathToken$ArrayPathTokenPredicate" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.ScanPathToken$ArrayPathTokenPredicate::ctx:com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.ScanPathToken$ArrayPathTokenPredicate::matches(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.ScanPathToken$FilterPathTokenPredicate" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.ScanPathToken$FilterPathTokenPredicate::ctx:com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.ScanPathToken$FilterPathTokenPredicate::matches(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.ScanPathToken$PropertyPathTokenPredicate" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.ScanPathToken$PropertyPathTokenPredicate::ctx:com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.ScanPathToken$PropertyPathTokenPredicate::matches(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.internal.Path" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl::path:com.jayway.jsonpath.internal.Path" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl::getValue():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.Configuration" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.path.PredicateContextImpl" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.path.PredicateContextImpl::configuration:com.jayway.jsonpath.Configuration" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.PredicateContextImpl::item():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.internal.function.Parameter" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue::jsonParameter:com.jayway.jsonpath.internal.function.Parameter" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue::get():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.jayway.jsonpath.spi.json.JsonProvider" />
+			<role name="Adapter" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue" />
+			<role name="adaptee" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue::jsonProvider:com.jayway.jsonpath.spi.json.JsonProvider" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue::get():java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="com.jayway.jsonpath.Predicate" />
+			<role name="Decorator" element="com.jayway.jsonpath.Filter$OrFilter" />
+			<role name="component" element="com.jayway.jsonpath.Filter$OrFilter::left:com.jayway.jsonpath.Predicate" />
+			<role name="component" element="com.jayway.jsonpath.Filter$OrFilter::right:com.jayway.jsonpath.Predicate" />
+			<role name="Operation()" element="com.jayway.jsonpath.Filter$OrFilter::apply(com.jayway.jsonpath.Predicate$PredicateContext):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.jayway.jsonpath.Predicate" />
+			<role name="Decorator" element="com.jayway.jsonpath.Filter$SingleFilter" />
+			<role name="component" element="com.jayway.jsonpath.Filter$SingleFilter::predicate:com.jayway.jsonpath.Predicate" />
+			<role name="Operation()" element="com.jayway.jsonpath.Filter$SingleFilter::apply(com.jayway.jsonpath.Predicate$PredicateContext):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.jayway.jsonpath.Predicate" />
+			<role name="Decorator" element="com.jayway.jsonpath.internal.filter.FilterCompiler$CompiledFilter" />
+			<role name="component" element="com.jayway.jsonpath.internal.filter.FilterCompiler$CompiledFilter::predicate:com.jayway.jsonpath.Predicate" />
+			<role name="Operation()" element="com.jayway.jsonpath.internal.filter.FilterCompiler$CompiledFilter::apply(com.jayway.jsonpath.Predicate$PredicateContext):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="State" element="com.jayway.jsonpath.internal.Path" />
+			<role name="Context" element="com.jayway.jsonpath.JsonPath" />
+			<role name="state" element="com.jayway.jsonpath.JsonPath::path:com.jayway.jsonpath.internal.Path" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::isDefinite():boolean" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::read(, com.jayway.jsonpath.Configuration):java.lang.Object" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::set(, java.lang.Object, com.jayway.jsonpath.Configuration):java.lang.Object" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::map(, com.jayway.jsonpath.MapFunction, com.jayway.jsonpath.Configuration):java.lang.Object" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::delete(, com.jayway.jsonpath.Configuration):java.lang.Object" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::add(, java.lang.Object, com.jayway.jsonpath.Configuration):java.lang.Object" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::put(, java.lang.String, java.lang.Object, com.jayway.jsonpath.Configuration):java.lang.Object" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::renameKey(, java.lang.String, java.lang.String, com.jayway.jsonpath.Configuration):java.lang.Object" />
+			<role name="Request()" element="com.jayway.jsonpath.JsonPath::handleMissingPathInContext():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureToParserAdapter" />
+			<role name="State" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureScope" />
+			<role name="state" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureToParserAdapter::scope:com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureScope" />
+			<role name="Request()" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureToParserAdapter::next():jakarta.json.stream.JsonParser$Event" />
+			<role name="Request()" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureToParserAdapter::getString():java.lang.String" />
+			<role name="Request()" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureToParserAdapter::isIntegralNumber():boolean" />
+			<role name="Request()" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureToParserAdapter::getInt():int" />
+			<role name="Request()" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureToParserAdapter::getLong():long" />
+			<role name="Request()" element="com.jayway.jsonpath.spi.mapper.JakartaMappingProvider$JsonStructureToParserAdapter::getBigDecimal():java.math.BigDecimal" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl" />
+			<role name="State" element="com.jayway.jsonpath.internal.Path" />
+			<role name="state" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl::path:com.jayway.jsonpath.internal.Path" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.path.EvaluationContextImpl::getValue():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.jayway.jsonpath.internal.filter.ValueNodes$PathNode" />
+			<role name="State" element="com.jayway.jsonpath.internal.Path" />
+			<role name="state" element="com.jayway.jsonpath.internal.filter.ValueNodes$PathNode::path:com.jayway.jsonpath.internal.Path" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.filter.ValueNodes$PathNode::evaluate(com.jayway.jsonpath.Predicate$PredicateContext):com.jayway.jsonpath.internal.filter.ValueNode" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.jayway.jsonpath.internal.function.Parameter" />
+			<role name="State" element="com.jayway.jsonpath.internal.function.latebinding.ILateBindingValue" />
+			<role name="state" element="com.jayway.jsonpath.internal.function.Parameter::lateBinding:com.jayway.jsonpath.internal.function.latebinding.ILateBindingValue" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.function.Parameter::getValue():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue" />
+			<role name="State" element="com.jayway.jsonpath.spi.json.JsonProvider" />
+			<role name="state" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue::jsonProvider:com.jayway.jsonpath.spi.json.JsonProvider" />
+			<role name="Request()" element="com.jayway.jsonpath.internal.function.latebinding.JsonLateBindingValue::get():java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="com.jayway.jsonpath.internal.function.numeric.AbstractAggregation" />
+			<role name="TemplateMethod()" element="com.jayway.jsonpath.internal.function.numeric.AbstractAggregation::invoke(java.lang.String, com.jayway.jsonpath.internal.PathRef, java.lang.Object, com.jayway.jsonpath.internal.EvaluationContext, java.util.List):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.jayway.jsonpath.internal.path.PathToken" />
+			<role name="TemplateMethod()" element="com.jayway.jsonpath.internal.path.PathToken::handleObjectProperty(java.lang.String, java.lang.Object, com.jayway.jsonpath.internal.path.EvaluationContextImpl, java.util.List):void" />
+			<role name="TemplateMethod()" element="com.jayway.jsonpath.internal.path.PathToken::handleArrayIndex(int, java.lang.String, java.lang.Object, com.jayway.jsonpath.internal.path.EvaluationContextImpl):void" />
+			<role name="TemplateMethod()" element="com.jayway.jsonpath.internal.path.PathToken::isUpstreamDefinite():boolean" />
+			<role name="TemplateMethod()" element="com.jayway.jsonpath.internal.path.PathToken::isPathDefinite():boolean" />
+			<role name="TemplateMethod()" element="com.jayway.jsonpath.internal.path.PathToken::toString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.jayway.jsonpath.internal.PathRef" />
+			<role name="TemplateMethod()" element="com.jayway.jsonpath.internal.PathRef::compareTo(com.jayway.jsonpath.internal.PathRef):int" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.jayway.jsonassert.impl.matcher.CollectionMatcher" />
+			<role name="TemplateMethod()" element="com.jayway.jsonassert.impl.matcher.CollectionMatcher::matches(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.jayway.jsonassert.impl.matcher.MapTypeSafeMatcher" />
+			<role name="TemplateMethod()" element="com.jayway.jsonassert.impl.matcher.MapTypeSafeMatcher::matches(java.lang.Object):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility">
+		<instance>
+			<role name="Handler" element="com.jayway.jsonpath.internal.path.PathToken" />
+			<role name="successor" element="com.jayway.jsonpath.internal.path.PathToken::prev:com.jayway.jsonpath.internal.path.PathToken" />
+			<role name="successor" element="com.jayway.jsonpath.internal.path.PathToken::next:com.jayway.jsonpath.internal.path.PathToken" />
+		</instance>
+	</pattern>
+</system>
+

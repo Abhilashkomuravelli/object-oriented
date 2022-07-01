@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.JSONPath$FloorSegment" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.JSONPath$FloorSegment::instance:com.alibaba.fastjson.JSONPath$FloorSegment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.JSONPath$KeySetSegment" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.JSONPath$KeySetSegment::instance:com.alibaba.fastjson.JSONPath$KeySetSegment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.JSONPath$MaxSegment" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.JSONPath$MaxSegment::instance:com.alibaba.fastjson.JSONPath$MaxSegment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.JSONPath$MinSegment" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.JSONPath$MinSegment::instance:com.alibaba.fastjson.JSONPath$MinSegment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.JSONPath$SizeSegment" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.JSONPath$SizeSegment::instance:com.alibaba.fastjson.JSONPath$SizeSegment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.JSONPath$TypeSegment" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.JSONPath$TypeSegment::instance:com.alibaba.fastjson.JSONPath$TypeSegment" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.deserializer.JavaObjectDeserializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.deserializer.JavaObjectDeserializer::instance:com.alibaba.fastjson.parser.deserializer.JavaObjectDeserializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.deserializer.Jdk8DateCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.deserializer.Jdk8DateCodec::instance:com.alibaba.fastjson.parser.deserializer.Jdk8DateCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.deserializer.JSONPDeserializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.deserializer.JSONPDeserializer::instance:com.alibaba.fastjson.parser.deserializer.JSONPDeserializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.deserializer.MapDeserializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.deserializer.MapDeserializer::instance:com.alibaba.fastjson.parser.deserializer.MapDeserializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.deserializer.NumberDeserializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.deserializer.NumberDeserializer::instance:com.alibaba.fastjson.parser.deserializer.NumberDeserializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.deserializer.OptionalCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.deserializer.OptionalCodec::instance:com.alibaba.fastjson.parser.deserializer.OptionalCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.deserializer.StackTraceElementDeserializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.deserializer.StackTraceElementDeserializer::instance:com.alibaba.fastjson.parser.deserializer.StackTraceElementDeserializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.deserializer.TimeDeserializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.deserializer.TimeDeserializer::instance:com.alibaba.fastjson.parser.deserializer.TimeDeserializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.parser.ParserConfig" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.parser.ParserConfig::global:com.alibaba.fastjson.parser.ParserConfig" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.AdderSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.AdderSerializer::instance:com.alibaba.fastjson.serializer.AdderSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.AnnotationSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.AnnotationSerializer::instance:com.alibaba.fastjson.serializer.AnnotationSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.AppendableSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.AppendableSerializer::instance:com.alibaba.fastjson.serializer.AppendableSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.AtomicCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.AtomicCodec::instance:com.alibaba.fastjson.serializer.AtomicCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.AwtCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.AwtCodec::instance:com.alibaba.fastjson.serializer.AwtCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.BigDecimalCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.BigDecimalCodec::instance:com.alibaba.fastjson.serializer.BigDecimalCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.BigIntegerCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.BigIntegerCodec::instance:com.alibaba.fastjson.serializer.BigIntegerCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.BooleanCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.BooleanCodec::instance:com.alibaba.fastjson.serializer.BooleanCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.ByteBufferCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.ByteBufferCodec::instance:com.alibaba.fastjson.serializer.ByteBufferCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.CalendarCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.CalendarCodec::instance:com.alibaba.fastjson.serializer.CalendarCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.CharacterCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.CharacterCodec::instance:com.alibaba.fastjson.serializer.CharacterCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.ClobSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.ClobSerializer::instance:com.alibaba.fastjson.serializer.ClobSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.CollectionCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.CollectionCodec::instance:com.alibaba.fastjson.serializer.CollectionCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.DateCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.DateCodec::instance:com.alibaba.fastjson.serializer.DateCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.DoubleSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.DoubleSerializer::instance:com.alibaba.fastjson.serializer.DoubleSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.EnumerationSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.EnumerationSerializer::instance:com.alibaba.fastjson.serializer.EnumerationSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.EnumSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.EnumSerializer::instance:com.alibaba.fastjson.serializer.EnumSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.FloatCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.FloatCodec::instance:com.alibaba.fastjson.serializer.FloatCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.GuavaCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.GuavaCodec::instance:com.alibaba.fastjson.serializer.GuavaCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.IntegerCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.IntegerCodec::instance:com.alibaba.fastjson.serializer.IntegerCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.JodaCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.JodaCodec::instance:com.alibaba.fastjson.serializer.JodaCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.JSONAwareSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.JSONAwareSerializer::instance:com.alibaba.fastjson.serializer.JSONAwareSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.JSONObjectCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.JSONObjectCodec::instance:com.alibaba.fastjson.serializer.JSONObjectCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.JSONSerializableSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.JSONSerializableSerializer::instance:com.alibaba.fastjson.serializer.JSONSerializableSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.ListSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.ListSerializer::instance:com.alibaba.fastjson.serializer.ListSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.LongCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.LongCodec::instance:com.alibaba.fastjson.serializer.LongCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.MapSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.MapSerializer::instance:com.alibaba.fastjson.serializer.MapSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.MiscCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.MiscCodec::instance:com.alibaba.fastjson.serializer.MiscCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.ObjectArrayCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.ObjectArrayCodec::instance:com.alibaba.fastjson.serializer.ObjectArrayCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.PrimitiveArraySerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.PrimitiveArraySerializer::instance:com.alibaba.fastjson.serializer.PrimitiveArraySerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.ReferenceCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.ReferenceCodec::instance:com.alibaba.fastjson.serializer.ReferenceCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.SerializeConfig" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.SerializeConfig::globalInstance:com.alibaba.fastjson.serializer.SerializeConfig" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.StringCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.StringCodec::instance:com.alibaba.fastjson.serializer.StringCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.serializer.ToStringSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.serializer.ToStringSerializer::instance:com.alibaba.fastjson.serializer.ToStringSerializer" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.support.moneta.MonetaCodec" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.support.moneta.MonetaCodec::instance:com.alibaba.fastjson.support.moneta.MonetaCodec" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.alibaba.fastjson.support.springfox.SwaggerJsonSerializer" />
+			<role name="uniqueInstance" element="com.alibaba.fastjson.support.springfox.SwaggerJsonSerializer::instance:com.alibaba.fastjson.support.springfox.SwaggerJsonSerializer" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="com.alibaba.fastjson.asm.ByteVector" />
+			<role name="Adapter" element="com.alibaba.fastjson.asm.MethodWriter" />
+			<role name="adaptee" element="com.alibaba.fastjson.asm.MethodWriter::code:com.alibaba.fastjson.asm.ByteVector" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitInsn(int):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitIntInsn(int, int):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitVarInsn(int, int):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitTypeInsn(int, java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitFieldInsn(int, java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitJumpInsn(int, com.alibaba.fastjson.asm.Label):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitLdcInsn(java.lang.Object):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitIincInsn(int, int):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.fastjson.asm.ClassWriter" />
+			<role name="Adapter" element="com.alibaba.fastjson.asm.MethodWriter" />
+			<role name="adaptee" element="com.alibaba.fastjson.asm.MethodWriter::cw:com.alibaba.fastjson.asm.ClassWriter" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitTypeInsn(int, java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitFieldInsn(int, java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitMethodInsn(int, java.lang.String, java.lang.String, java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.fastjson.asm.MethodWriter::visitLdcInsn(java.lang.Object):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.fastjson.parser.deserializer.ObjectDeserializer" />
+			<role name="Adapter" element="com.alibaba.fastjson.parser.deserializer.DefaultFieldDeserializer" />
+			<role name="adaptee" element="com.alibaba.fastjson.parser.deserializer.DefaultFieldDeserializer::fieldValueDeserilizer:com.alibaba.fastjson.parser.deserializer.ObjectDeserializer" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.deserializer.DefaultFieldDeserializer::parseField(com.alibaba.fastjson.parser.DefaultJSONParser, java.lang.Object, java.lang.reflect.Type, java.util.Map):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.alibaba.fastjson.JSONPath$Filter" />
+			<role name="Adapter" element="com.alibaba.fastjson.JSONPath$FilterSegment" />
+			<role name="adaptee" element="com.alibaba.fastjson.JSONPath$FilterSegment::filter:com.alibaba.fastjson.JSONPath$Filter" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath$FilterSegment::eval(com.alibaba.fastjson.JSONPath, java.lang.Object, java.lang.Object):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="com.alibaba.fastjson.serializer.ObjectSerializer" />
+			<role name="Decorator" element="com.alibaba.fastjson.serializer.ArraySerializer" />
+			<role name="component" element="com.alibaba.fastjson.serializer.ArraySerializer::compObjectSerializer:com.alibaba.fastjson.serializer.ObjectSerializer" />
+			<role name="Operation()" element="com.alibaba.fastjson.serializer.ArraySerializer::write(com.alibaba.fastjson.serializer.JSONSerializer, java.lang.Object, java.lang.Object, java.lang.reflect.Type, int):void" />
+		</instance>
+	</pattern>
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="State" element="com.alibaba.fastjson.parser.ParserConfig$AutoTypeCheckHandler" />
+			<role name="Context" element="com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer" />
+			<role name="state" element="com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer::autoTypeCheckHandler:com.alibaba.fastjson.parser.ParserConfig$AutoTypeCheckHandler" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer::deserialze(, java.lang.reflect.Type, java.lang.Object, java.lang.Object, int, int[]):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.fastjson.JSONPath" />
+			<role name="State" element="com.alibaba.fastjson.JSONPath$Segment" />
+			<role name="state" element="com.alibaba.fastjson.JSONPath::segments:com.alibaba.fastjson.JSONPath$Segment[]" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::eval(java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::extract(com.alibaba.fastjson.parser.DefaultJSONParser):java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::contains(java.lang.Object):boolean" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::size(java.lang.Object):int" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::keySet(java.lang.Object):java.util.Set" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::patchAdd(java.lang.Object, java.lang.Object, boolean):void" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::arrayAdd(java.lang.Object, java.lang.Object[]):void" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::remove(java.lang.Object):boolean" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath::set(java.lang.Object, java.lang.Object, boolean):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.fastjson.parser.DefaultJSONParser" />
+			<role name="State" element="com.alibaba.fastjson.parser.JSONLexer" />
+			<role name="state" element="com.alibaba.fastjson.parser.DefaultJSONParser::lexer:com.alibaba.fastjson.parser.JSONLexer" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::getDateFormat():java.text.DateFormat" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseObject(java.util.Map, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseObject(, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseArray(java.lang.reflect.Type, java.util.Collection, java.lang.Object):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseArray(java.lang.reflect.Type[]):java.lang.Object[]" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseObject(java.lang.Object):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseArrayWithType(java.lang.reflect.Type):java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::acceptType(java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseObject():com.alibaba.fastjson.JSONObject" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseArray(java.util.Collection, java.lang.Object):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::setContext(com.alibaba.fastjson.parser.ParseContext):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::popContext():void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::setContext(java.lang.Object, java.lang.Object):com.alibaba.fastjson.parser.ParseContext" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::setContext(com.alibaba.fastjson.parser.ParseContext, java.lang.Object, java.lang.Object):com.alibaba.fastjson.parser.ParseContext" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseKey():java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parse(java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::config(com.alibaba.fastjson.parser.Feature, boolean):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::isEnabled(com.alibaba.fastjson.parser.Feature):boolean" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::accept(int):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::accept(int, int):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::throwException(int):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::close():void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseExtra(java.lang.Object, java.lang.String):void" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parse(com.alibaba.fastjson.parser.deserializer.PropertyProcessable, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.fastjson.parser.deserializer.ArrayListTypeFieldDeserializer" />
+			<role name="State" element="com.alibaba.fastjson.parser.deserializer.ObjectDeserializer" />
+			<role name="state" element="com.alibaba.fastjson.parser.deserializer.ArrayListTypeFieldDeserializer::deserializer:com.alibaba.fastjson.parser.deserializer.ObjectDeserializer" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.deserializer.ArrayListTypeFieldDeserializer::parseArray(com.alibaba.fastjson.parser.DefaultJSONParser, java.lang.reflect.Type, java.util.Collection):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.fastjson.parser.deserializer.DefaultFieldDeserializer" />
+			<role name="State" element="com.alibaba.fastjson.parser.deserializer.ObjectDeserializer" />
+			<role name="state" element="com.alibaba.fastjson.parser.deserializer.DefaultFieldDeserializer::fieldValueDeserilizer:com.alibaba.fastjson.parser.deserializer.ObjectDeserializer" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.deserializer.DefaultFieldDeserializer::getFastMatchToken():int" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer" />
+			<role name="State" element="com.alibaba.fastjson.parser.deserializer.FieldDeserializer" />
+			<role name="state" element="com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer::sortedFieldDeserializers:com.alibaba.fastjson.parser.deserializer.FieldDeserializer[]" />
+			<role name="state" element="com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer::fieldDeserializers:com.alibaba.fastjson.parser.deserializer.FieldDeserializer[]" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer::deserialze(, java.lang.reflect.Type, java.lang.Object, java.lang.Object, int, int[]):java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer::parseField(com.alibaba.fastjson.parser.DefaultJSONParser, java.lang.String, java.lang.Object, java.lang.reflect.Type, java.util.Map, int[]):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.fastjson.parser.DefaultJSONParser" />
+			<role name="State" element="com.alibaba.fastjson.parser.deserializer.FieldTypeResolver" />
+			<role name="state" element="com.alibaba.fastjson.parser.DefaultJSONParser::fieldTypeResolver:com.alibaba.fastjson.parser.deserializer.FieldTypeResolver" />
+			<role name="Request()" element="com.alibaba.fastjson.parser.DefaultJSONParser::parseObject(java.util.Map, java.lang.Object):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.fastjson.JSONPath$FilterSegment" />
+			<role name="State" element="com.alibaba.fastjson.JSONPath$Filter" />
+			<role name="state" element="com.alibaba.fastjson.JSONPath$FilterSegment::filter:com.alibaba.fastjson.JSONPath$Filter" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath$FilterSegment::eval(com.alibaba.fastjson.JSONPath, java.lang.Object, java.lang.Object):java.lang.Object" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath$FilterSegment::remove(com.alibaba.fastjson.JSONPath, java.lang.Object, java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.alibaba.fastjson.JSONPath$RefOpSegement" />
+			<role name="State" element="com.alibaba.fastjson.JSONPath$Segment" />
+			<role name="state" element="com.alibaba.fastjson.JSONPath$RefOpSegement::refSgement:com.alibaba.fastjson.JSONPath$Segment" />
+			<role name="Request()" element="com.alibaba.fastjson.JSONPath$RefOpSegement::apply(com.alibaba.fastjson.JSONPath, java.lang.Object, java.lang.Object, java.lang.Object):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge">
+		<instance>
+			<role name="Abstraction" element="com.alibaba.fastjson.JSONPath$PropertyFilter" />
+			<role name="Implementor" element="com.alibaba.fastjson.JSONPath$Segment" />
+			<role name="implementor" element="com.alibaba.fastjson.JSONPath$PropertyFilter::functionExpr:com.alibaba.fastjson.JSONPath$Segment" />
+			<role name="Operation()" element="com.alibaba.fastjson.JSONPath$PropertyFilter::get(com.alibaba.fastjson.JSONPath, java.lang.Object, java.lang.Object):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.fastjson.JSONValidator" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.JSONValidator::any():boolean" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.JSONValidator::fieldName():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.JSONValidator::string():boolean" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.JSONValidator::skipWhiteSpace():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.fastjson.parser.JSONLexerBase" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::nextToken():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::nextToken(int):void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::nextIdent():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::nextTokenWithChar(char):void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::integerValue():java.lang.Number" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::floatValue():float" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::doubleValue():double" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::skipComment():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanSymbol(com.alibaba.fastjson.parser.SymbolTable):java.lang.String" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanSymbol(com.alibaba.fastjson.parser.SymbolTable, char):java.lang.String" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanSymbolUnQuoted(com.alibaba.fastjson.parser.SymbolTable):java.lang.String" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanString():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::intValue():int" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::isRef():boolean" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanType(java.lang.String):int" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::matchField(char[]):boolean" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldString(char[]):java.lang.String" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanString(char):java.lang.String" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldSymbol(char[]):long" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanEnumSymbol(char[]):long" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanSymbolWithSeperator(com.alibaba.fastjson.parser.SymbolTable, char):java.lang.String" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldStringArray(char[], java.lang.Class):java.util.Collection" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanStringArray(java.util.Collection, char):void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldInt(char[]):int" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldIntArray(char[]):int[]" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanBoolean(char):boolean" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanInt(char):int" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldBoolean(char[]):boolean" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldLong(char[]):long" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanLong(char):long" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldFloat(char[]):float" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFloat(char):float" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanDouble(char):double" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanDecimal(char):java.math.BigDecimal" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldFloatArray(char[]):float[]" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldFloatArray2(char[]):float[][]" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldDouble(char[]):double" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldDecimal(char[]):java.math.BigDecimal" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldBigInteger(char[]):java.math.BigInteger" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldDate(char[]):java.util.Date" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanDate(char):java.util.Date" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFieldUUID(char[]):java.util.UUID" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanUUID(char):java.util.UUID" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanTrue():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanNullOrNew(boolean):void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanFalse():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanIdent():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::isBlankInput():boolean" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::skipWhitespace():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanStringSingleQuote():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanHex():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::scanNumber():void" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::longValue():long" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.parser.JSONLexerBase::decimalValue(boolean):java.lang.Number" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.fastjson.serializer.AfterFilter" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.serializer.AfterFilter::writeAfter(com.alibaba.fastjson.serializer.JSONSerializer, java.lang.Object, char):char" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.alibaba.fastjson.serializer.BeforeFilter" />
+			<role name="TemplateMethod()" element="com.alibaba.fastjson.serializer.BeforeFilter::writeBefore(com.alibaba.fastjson.serializer.JSONSerializer, java.lang.Object, char):char" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+

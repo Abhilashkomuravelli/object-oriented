@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.ast.visitor.EqualsVisitor" />
+			<role name="uniqueInstance" element="com.github.javaparser.ast.visitor.EqualsVisitor::SINGLETON:com.github.javaparser.ast.visitor.EqualsVisitor" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.ast.visitor.HashCodeVisitor" />
+			<role name="uniqueInstance" element="com.github.javaparser.ast.visitor.HashCodeVisitor::SINGLETON:com.github.javaparser.ast.visitor.HashCodeVisitor" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.ast.visitor.NoCommentEqualsVisitor" />
+			<role name="uniqueInstance" element="com.github.javaparser.ast.visitor.NoCommentEqualsVisitor::SINGLETON:com.github.javaparser.ast.visitor.NoCommentEqualsVisitor" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.ast.visitor.NoCommentHashCodeVisitor" />
+			<role name="uniqueInstance" element="com.github.javaparser.ast.visitor.NoCommentHashCodeVisitor::SINGLETON:com.github.javaparser.ast.visitor.NoCommentHashCodeVisitor" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.ast.visitor.ObjectIdentityEqualsVisitor" />
+			<role name="uniqueInstance" element="com.github.javaparser.ast.visitor.ObjectIdentityEqualsVisitor::SINGLETON:com.github.javaparser.ast.visitor.ObjectIdentityEqualsVisitor" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.ast.visitor.ObjectIdentityHashCodeVisitor" />
+			<role name="uniqueInstance" element="com.github.javaparser.ast.visitor.ObjectIdentityHashCodeVisitor::SINGLETON:com.github.javaparser.ast.visitor.ObjectIdentityHashCodeVisitor" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.JavaToken" />
+			<role name="uniqueInstance" element="com.github.javaparser.JavaToken::INVALID:com.github.javaparser.JavaToken" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.Position" />
+			<role name="uniqueInstance" element="com.github.javaparser.Position::HOME:com.github.javaparser.Position" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.resolution.types.ResolvedWildcard" />
+			<role name="uniqueInstance" element="com.github.javaparser.resolution.types.ResolvedWildcard::UNBOUNDED:com.github.javaparser.resolution.types.ResolvedWildcard" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.TokenRange" />
+			<role name="uniqueInstance" element="com.github.javaparser.TokenRange::INVALID:com.github.javaparser.TokenRange" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.github.javaparser.UnicodeEscapeProcessingProvider$PositionMapping$PositionUpdate" />
+			<role name="uniqueInstance" element="com.github.javaparser.UnicodeEscapeProcessingProvider$PositionMapping$PositionUpdate::NONE:com.github.javaparser.UnicodeEscapeProcessingProvider$PositionMapping$PositionUpdate" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.ast.type.PrimitiveType$Primitive" />
+			<role name="Adapter" element="com.github.javaparser.ast.type.PrimitiveType" />
+			<role name="adaptee" element="com.github.javaparser.ast.type.PrimitiveType::type:com.github.javaparser.ast.type.PrimitiveType$Primitive" />
+			<role name="Request()" element="com.github.javaparser.ast.type.PrimitiveType::asString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.JavaToken" />
+			<role name="Adapter" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement" />
+			<role name="adaptee" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::token:com.github.javaparser.JavaToken" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::expand():java.lang.String" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::isToken(int):boolean" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::isWhiteSpace():boolean" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::isSpaceOrTab():boolean" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::isComment():boolean" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::isSeparator():boolean" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::isNewline():boolean" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TokenTextElement::getRange():java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration" />
+			<role name="Adapter" element="com.github.javaparser.resolution.types.ResolvedReferenceType" />
+			<role name="adaptee" element="com.github.javaparser.resolution.types.ResolvedReferenceType::typeDeclaration:com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration" />
+			<role name="Request()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::describe():java.lang.String" />
+			<role name="Request()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::getGenericParameterByName(java.lang.String):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="Adapter" element="com.github.javaparser.printer.lexicalpreservation.changes.PropertyChange" />
+			<role name="adaptee" element="com.github.javaparser.printer.lexicalpreservation.changes.PropertyChange::property:com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.changes.PropertyChange::getValue(com.github.javaparser.ast.observer.ObservableProperty, com.github.javaparser.ast.Node):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.SimpleCharStream" />
+			<role name="Adapter" element="com.github.javaparser.GeneratedJavaParser" />
+			<role name="adaptee" element="com.github.javaparser.GeneratedJavaParser::jj_input_stream:com.github.javaparser.SimpleCharStream" />
+			<role name="Request()" element="com.github.javaparser.GeneratedJavaParser::ReInit(com.github.javaparser.Provider):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.github.javaparser.UnicodeEscapeProcessingProvider" />
+			<role name="Adaptee" element="com.github.javaparser.UnicodeEscapeProcessingProvider$LineCounter" />
+			<role name="adaptee" element="com.github.javaparser.UnicodeEscapeProcessingProvider::_outputLine:com.github.javaparser.UnicodeEscapeProcessingProvider$LineCounter" />
+			<role name="Request()" element="com.github.javaparser.UnicodeEscapeProcessingProvider::read(char[], int, int):int" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.github.javaparser.UnicodeEscapeProcessingProvider" />
+			<role name="Adaptee" element="com.github.javaparser.UnicodeEscapeProcessingProvider$PositionMappingBuilder" />
+			<role name="adaptee" element="com.github.javaparser.UnicodeEscapeProcessingProvider::_mappingBuilder:com.github.javaparser.UnicodeEscapeProcessingProvider$PositionMappingBuilder" />
+			<role name="Request()" element="com.github.javaparser.UnicodeEscapeProcessingProvider::read(char[], int, int):int" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.resolution.declarations.ResolvedTypeParameterDeclaration" />
+			<role name="Adapter" element="com.github.javaparser.resolution.types.ResolvedTypeVariable" />
+			<role name="adaptee" element="com.github.javaparser.resolution.types.ResolvedTypeVariable::typeParameter:com.github.javaparser.resolution.declarations.ResolvedTypeParameterDeclaration" />
+			<role name="Request()" element="com.github.javaparser.resolution.types.ResolvedTypeVariable::describe():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.ast.validator.TypedValidator" />
+			<role name="Adapter" element="com.github.javaparser.ast.validator.SingleNodeTypeValidator" />
+			<role name="adaptee" element="com.github.javaparser.ast.validator.SingleNodeTypeValidator::validator:com.github.javaparser.ast.validator.TypedValidator" />
+			<role name="Request()" element="com.github.javaparser.ast.validator.SingleNodeTypeValidator::accept(com.github.javaparser.ast.Node, com.github.javaparser.ast.validator.ProblemReporter):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.ast.Node" />
+			<role name="Adapter" element="com.github.javaparser.printer.lexicalpreservation.ChildTextElement" />
+			<role name="adaptee" element="com.github.javaparser.printer.lexicalpreservation.ChildTextElement::child:com.github.javaparser.ast.Node" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.ChildTextElement::getRange():java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.github.javaparser.Provider" />
+			<role name="Adapter" element="com.github.javaparser.SimpleCharStream" />
+			<role name="adaptee" element="com.github.javaparser.SimpleCharStream::inputStream:com.github.javaparser.Provider" />
+			<role name="Request()" element="com.github.javaparser.SimpleCharStream::streamRead(char[], int, int):int" />
+			<role name="Request()" element="com.github.javaparser.SimpleCharStream::streamClose():void" />
+		</instance>
+	</pattern>
+	<pattern name="Command">
+		<instance>
+			<role name="ConcreteCommand" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList" />
+			<role name="Receiver" element="com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="receiver" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList::property:com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="Execute()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList::prettyPrint(com.github.javaparser.ast.Node, com.github.javaparser.printer.SourcePrinter):void" />
+		</instance>
+		<instance>
+			<role name="ConcreteCommand" element="com.github.javaparser.printer.concretesyntaxmodel.CsmAttribute" />
+			<role name="Receiver" element="com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="receiver" element="com.github.javaparser.printer.concretesyntaxmodel.CsmAttribute::property:com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="Execute()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmAttribute::prettyPrint(com.github.javaparser.ast.Node, com.github.javaparser.printer.SourcePrinter):void" />
+		</instance>
+		<instance>
+			<role name="ConcreteCommand" element="com.github.javaparser.printer.concretesyntaxmodel.CsmChar" />
+			<role name="Receiver" element="com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="receiver" element="com.github.javaparser.printer.concretesyntaxmodel.CsmChar::property:com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="Execute()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmChar::prettyPrint(com.github.javaparser.ast.Node, com.github.javaparser.printer.SourcePrinter):void" />
+		</instance>
+		<instance>
+			<role name="ConcreteCommand" element="com.github.javaparser.printer.concretesyntaxmodel.CsmSingleReference" />
+			<role name="Receiver" element="com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="receiver" element="com.github.javaparser.printer.concretesyntaxmodel.CsmSingleReference::property:com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="Execute()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmSingleReference::prettyPrint(com.github.javaparser.ast.Node, com.github.javaparser.printer.SourcePrinter):void" />
+		</instance>
+		<instance>
+			<role name="ConcreteCommand" element="com.github.javaparser.printer.concretesyntaxmodel.CsmString" />
+			<role name="Receiver" element="com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="receiver" element="com.github.javaparser.printer.concretesyntaxmodel.CsmString::property:com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="Execute()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmString::prettyPrint(com.github.javaparser.ast.Node, com.github.javaparser.printer.SourcePrinter):void" />
+		</instance>
+		<instance>
+			<role name="ConcreteCommand" element="com.github.javaparser.printer.concretesyntaxmodel.CsmTextBlock" />
+			<role name="Receiver" element="com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="receiver" element="com.github.javaparser.printer.concretesyntaxmodel.CsmTextBlock::property:com.github.javaparser.ast.observer.ObservableProperty" />
+			<role name="Execute()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmTextBlock::prettyPrint(com.github.javaparser.ast.Node, com.github.javaparser.printer.SourcePrinter):void" />
+		</instance>
+	</pattern>
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="com.github.javaparser.ast.type.Type" />
+			<role name="Decorator" element="com.github.javaparser.ast.type.ArrayType" />
+			<role name="component" element="com.github.javaparser.ast.type.ArrayType::componentType:com.github.javaparser.ast.type.Type" />
+			<role name="Operation()" element="com.github.javaparser.ast.type.ArrayType::asString():java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.github.javaparser.ast.validator.Validator" />
+			<role name="Decorator" element="com.github.javaparser.ast.validator.TreeVisitorValidator" />
+			<role name="component" element="com.github.javaparser.ast.validator.TreeVisitorValidator::validator:com.github.javaparser.ast.validator.Validator" />
+			<role name="Operation()" element="com.github.javaparser.ast.validator.TreeVisitorValidator::accept(com.github.javaparser.ast.Node, com.github.javaparser.ast.validator.ProblemReporter):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.github.javaparser.printer.concretesyntaxmodel.CsmElement" />
+			<role name="Decorator" element="com.github.javaparser.printer.concretesyntaxmodel.CsmConditional" />
+			<role name="component" element="com.github.javaparser.printer.concretesyntaxmodel.CsmConditional::thenElement:com.github.javaparser.printer.concretesyntaxmodel.CsmElement" />
+			<role name="component" element="com.github.javaparser.printer.concretesyntaxmodel.CsmConditional::elseElement:com.github.javaparser.printer.concretesyntaxmodel.CsmElement" />
+			<role name="Operation()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmConditional::prettyPrint(com.github.javaparser.ast.Node, com.github.javaparser.printer.SourcePrinter):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.github.javaparser.printer.concretesyntaxmodel.CsmElement" />
+			<role name="Decorator" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList" />
+			<role name="component" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList::preceeding:com.github.javaparser.printer.concretesyntaxmodel.CsmElement" />
+			<role name="component" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList::separatorPre:com.github.javaparser.printer.concretesyntaxmodel.CsmElement" />
+			<role name="component" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList::separatorPost:com.github.javaparser.printer.concretesyntaxmodel.CsmElement" />
+			<role name="component" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList::following:com.github.javaparser.printer.concretesyntaxmodel.CsmElement" />
+			<role name="Operation()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmList::prettyPrint(com.github.javaparser.ast.Node, com.github.javaparser.printer.SourcePrinter):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.github.javaparser.printer.configuration.PrinterConfiguration" />
+			<role name="Decorator" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration" />
+			<role name="component" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::wrappedConfiguration:com.github.javaparser.printer.configuration.PrinterConfiguration" />
+			<role name="Operation()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::addOption(com.github.javaparser.printer.configuration.ConfigurationOption):com.github.javaparser.printer.configuration.PrinterConfiguration" />
+			<role name="Operation()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::isActivated(com.github.javaparser.printer.configuration.ConfigurationOption):boolean" />
+			<role name="Operation()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::get(com.github.javaparser.printer.configuration.ConfigurationOption):java.util.Optional" />
+			<role name="Operation()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::get():java.util.Set" />
+			<role name="Operation()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::removeOption(com.github.javaparser.printer.configuration.ConfigurationOption):com.github.javaparser.printer.configuration.PrinterConfiguration" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.github.javaparser.resolution.types.ResolvedType" />
+			<role name="Decorator" element="com.github.javaparser.resolution.types.ResolvedArrayType" />
+			<role name="component" element="com.github.javaparser.resolution.types.ResolvedArrayType::baseType:com.github.javaparser.resolution.types.ResolvedType" />
+			<role name="Operation()" element="com.github.javaparser.resolution.types.ResolvedArrayType::describe():java.lang.String" />
+			<role name="Operation()" element="com.github.javaparser.resolution.types.ResolvedArrayType::isAssignableBy(com.github.javaparser.resolution.types.ResolvedType):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.github.javaparser.resolution.types.ResolvedType" />
+			<role name="Decorator" element="com.github.javaparser.resolution.types.ResolvedLambdaConstraintType" />
+			<role name="component" element="com.github.javaparser.resolution.types.ResolvedLambdaConstraintType::bound:com.github.javaparser.resolution.types.ResolvedType" />
+			<role name="Operation()" element="com.github.javaparser.resolution.types.ResolvedLambdaConstraintType::describe():java.lang.String" />
+			<role name="Operation()" element="com.github.javaparser.resolution.types.ResolvedLambdaConstraintType::isAssignableBy(com.github.javaparser.resolution.types.ResolvedType):boolean" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.github.javaparser.resolution.types.ResolvedType" />
+			<role name="Decorator" element="com.github.javaparser.resolution.types.ResolvedWildcard" />
+			<role name="component" element="com.github.javaparser.resolution.types.ResolvedWildcard::boundedType:com.github.javaparser.resolution.types.ResolvedType" />
+			<role name="Operation()" element="com.github.javaparser.resolution.types.ResolvedWildcard::describe():java.lang.String" />
+			<role name="Operation()" element="com.github.javaparser.resolution.types.ResolvedWildcard::isAssignableBy(com.github.javaparser.resolution.types.ResolvedType):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Observer">
+		<instance>
+			<role name="Observer" element="com.github.javaparser.printer.lexicalpreservation.TextElement" />
+			<role name="Subject" element="com.github.javaparser.printer.lexicalpreservation.NodeText" />
+			<role name="Notify()" element="com.github.javaparser.printer.lexicalpreservation.NodeText::remove(com.github.javaparser.printer.lexicalpreservation.TextElementMatcher, boolean):void" />
+		</instance>
+		<instance>
+			<role name="Observer" element="com.github.javaparser.printer.lexicalpreservation.TextElementMatcher" />
+			<role name="Subject" element="com.github.javaparser.printer.lexicalpreservation.NodeText" />
+			<role name="Notify()" element="com.github.javaparser.printer.lexicalpreservation.NodeText::tryToFindElement(com.github.javaparser.printer.lexicalpreservation.TextElementMatcher, int):int" />
+		</instance>
+	</pattern>
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="com.github.javaparser.printer.concretesyntaxmodel.CsmToken" />
+			<role name="State" element="com.github.javaparser.printer.concretesyntaxmodel.CsmToken$TokenContentCalculator" />
+			<role name="state" element="com.github.javaparser.printer.concretesyntaxmodel.CsmToken::tokenContentCalculator:com.github.javaparser.printer.concretesyntaxmodel.CsmToken$TokenContentCalculator" />
+			<role name="Request()" element="com.github.javaparser.printer.concretesyntaxmodel.CsmToken::getContent(com.github.javaparser.ast.Node):java.lang.String" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.github.javaparser.printer.lexicalpreservation.TextElementIteratorsFactory$CascadingIterator" />
+			<role name="State" element="com.github.javaparser.printer.lexicalpreservation.TextElementIteratorsFactory$CascadingIterator$Provider" />
+			<role name="state" element="com.github.javaparser.printer.lexicalpreservation.TextElementIteratorsFactory$CascadingIterator::nextProvider:com.github.javaparser.printer.lexicalpreservation.TextElementIteratorsFactory$CascadingIterator$Provider" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TextElementIteratorsFactory$CascadingIterator::hasNext():boolean" />
+			<role name="Request()" element="com.github.javaparser.printer.lexicalpreservation.TextElementIteratorsFactory$CascadingIterator::next():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="State" element="com.github.javaparser.printer.configuration.PrinterConfiguration" />
+			<role name="Context" element="com.github.javaparser.printer.DefaultPrettyPrinterVisitor" />
+			<role name="state" element="com.github.javaparser.printer.DefaultPrettyPrinterVisitor::configuration:com.github.javaparser.printer.configuration.PrinterConfiguration" />
+			<role name="Request()" element="com.github.javaparser.printer.DefaultPrettyPrinterVisitor::getOption(com.github.javaparser.printer.configuration.DefaultPrinterConfiguration$ConfigOption):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.github.javaparser.resolution.types.ResolvedTypeVariable" />
+			<role name="State" element="com.github.javaparser.resolution.declarations.ResolvedTypeParameterDeclaration" />
+			<role name="state" element="com.github.javaparser.resolution.types.ResolvedTypeVariable::typeParameter:com.github.javaparser.resolution.declarations.ResolvedTypeParameterDeclaration" />
+			<role name="Request()" element="com.github.javaparser.resolution.types.ResolvedTypeVariable::equals(java.lang.Object):boolean" />
+			<role name="Request()" element="com.github.javaparser.resolution.types.ResolvedTypeVariable::replaceTypeVariables(com.github.javaparser.resolution.declarations.ResolvedTypeParameterDeclaration, com.github.javaparser.resolution.types.ResolvedType, java.util.Map):com.github.javaparser.resolution.types.ResolvedType" />
+			<role name="Request()" element="com.github.javaparser.resolution.types.ResolvedTypeVariable::describe():java.lang.String" />
+			<role name="Request()" element="com.github.javaparser.resolution.types.ResolvedTypeVariable::erasure():com.github.javaparser.resolution.types.ResolvedType" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.github.javaparser.ast.validator.SingleNodeTypeValidator" />
+			<role name="State" element="com.github.javaparser.ast.validator.TypedValidator" />
+			<role name="state" element="com.github.javaparser.ast.validator.SingleNodeTypeValidator::validator:com.github.javaparser.ast.validator.TypedValidator" />
+			<role name="Request()" element="com.github.javaparser.ast.validator.SingleNodeTypeValidator::accept(com.github.javaparser.ast.Node, com.github.javaparser.ast.validator.ProblemReporter):void" />
+			<role name="Request()" element="com.github.javaparser.ast.validator.SingleNodeTypeValidator::lambda$accept$0(com.github.javaparser.ast.validator.ProblemReporter, com.github.javaparser.ast.Node):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.github.javaparser.utils.Log" />
+			<role name="State" element="com.github.javaparser.utils.Log$Adapter" />
+			<role name="state" element="com.github.javaparser.utils.Log::CURRENT_ADAPTER:com.github.javaparser.utils.Log$Adapter" />
+			<role name="Request()" element="com.github.javaparser.utils.Log::trace(java.lang.String, java.util.function.Supplier):void" />
+			<role name="Request()" element="com.github.javaparser.utils.Log::info(java.lang.String, java.util.function.Supplier):void" />
+			<role name="Request()" element="com.github.javaparser.utils.Log::error(java.lang.Throwable):void" />
+			<role name="Request()" element="com.github.javaparser.utils.Log::error(java.lang.Throwable, java.lang.String, java.util.function.Supplier):void" />
+			<role name="Request()" element="com.github.javaparser.utils.Log::error(java.lang.String, java.util.function.Supplier):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.github.javaparser.SimpleCharStream" />
+			<role name="State" element="com.github.javaparser.Provider" />
+			<role name="state" element="com.github.javaparser.SimpleCharStream::inputStream:com.github.javaparser.Provider" />
+			<role name="Request()" element="com.github.javaparser.SimpleCharStream::streamRead(char[], int, int):int" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="com.github.javaparser.AbstractCharStream" />
+			<role name="TemplateMethod()" element="com.github.javaparser.AbstractCharStream::fillBuff():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.github.javaparser.ast.type.Type" />
+			<role name="TemplateMethod()" element="com.github.javaparser.ast.type.Type::resolve():java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.github.javaparser.ast.visitor.TreeVisitor" />
+			<role name="TemplateMethod()" element="com.github.javaparser.ast.visitor.TreeVisitor::visitLeavesFirst(com.github.javaparser.ast.Node):void" />
+			<role name="TemplateMethod()" element="com.github.javaparser.ast.visitor.TreeVisitor::visitPreOrder(com.github.javaparser.ast.Node):void" />
+			<role name="TemplateMethod()" element="com.github.javaparser.ast.visitor.TreeVisitor::visitPostOrder(com.github.javaparser.ast.Node):void" />
+			<role name="TemplateMethod()" element="com.github.javaparser.ast.visitor.TreeVisitor::visitBreadthFirst(com.github.javaparser.ast.Node):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.github.javaparser.GeneratedJavaParserBase" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::reset(com.github.javaparser.Provider):void" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::getTokens():java.util.List" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::getCommentsCollection():com.github.javaparser.ast.comments.CommentsCollection" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::tokenRange():com.github.javaparser.TokenRange" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::setTokenKind(int):void" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::setStoreTokens(boolean):void" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::recover(int, com.github.javaparser.ParseException):com.github.javaparser.TokenRange" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::recoverStatement(int, int, int, com.github.javaparser.ParseException):com.github.javaparser.TokenRange" />
+			<role name="TemplateMethod()" element="com.github.javaparser.GeneratedJavaParserBase::setYieldSupported():void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.github.javaparser.printer.lexicalpreservation.TextElement" />
+			<role name="TemplateMethod()" element="com.github.javaparser.printer.lexicalpreservation.TextElement::isCommentToken():boolean" />
+			<role name="TemplateMethod()" element="com.github.javaparser.printer.lexicalpreservation.TextElement::isWhiteSpaceOrComment():boolean" />
+			<role name="TemplateMethod()" element="com.github.javaparser.printer.lexicalpreservation.TextElement::isChild():boolean" />
+			<role name="TemplateMethod()" element="com.github.javaparser.printer.lexicalpreservation.TextElement::lambda$matchByRange$1(com.github.javaparser.printer.lexicalpreservation.TextElement):boolean" />
+			<role name="TemplateMethod()" element="com.github.javaparser.printer.lexicalpreservation.TextElement::lambda$null$0(com.github.javaparser.printer.lexicalpreservation.TextElement, com.github.javaparser.Range):java.util.Optional" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.github.javaparser.resolution.types.ResolvedReferenceType" />
+			<role name="TemplateMethod()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::replaceTypeVariables(com.github.javaparser.resolution.declarations.ResolvedTypeParameterDeclaration, com.github.javaparser.resolution.types.ResolvedType, java.util.Map):com.github.javaparser.resolution.types.ResolvedType" />
+			<role name="TemplateMethod()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::getAllInterfacesAncestors():java.util.List" />
+			<role name="TemplateMethod()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::getAllClassesAncestors():java.util.List" />
+			<role name="TemplateMethod()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::typeParamValue(com.github.javaparser.resolution.declarations.ResolvedTypeParameterDeclaration):java.util.Optional" />
+			<role name="TemplateMethod()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::getAllMethods():java.util.List" />
+			<role name="TemplateMethod()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::getAllFieldsVisibleToInheritors():java.util.List" />
+			<role name="TemplateMethod()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::create(com.github.javaparser.resolution.declarations.ResolvedReferenceTypeDeclaration, com.github.javaparser.resolution.types.parametrization.ResolvedTypeParametersMap):com.github.javaparser.resolution.types.ResolvedReferenceType" />
+			<role name="TemplateMethod()" element="com.github.javaparser.resolution.types.ResolvedReferenceType::erasure():com.github.javaparser.resolution.types.ResolvedType" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="com.github.javaparser.utils.StringEscapeUtils$CharSequenceTranslator" />
+			<role name="TemplateMethod()" element="com.github.javaparser.utils.StringEscapeUtils$CharSequenceTranslator::translate(java.lang.CharSequence, java.io.Writer):void" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2">
+		<instance>
+			<role name="Proxy" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration" />
+			<role name="RealSubject" element="com.github.javaparser.printer.configuration.DefaultPrinterConfiguration" />
+			<role name="Subject" element="com.github.javaparser.printer.configuration.PrinterConfiguration" />
+			<role name="subject" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::wrappedConfiguration:com.github.javaparser.printer.configuration.PrinterConfiguration" />
+			<role name="Request()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::addOption(com.github.javaparser.printer.configuration.ConfigurationOption):com.github.javaparser.printer.configuration.PrinterConfiguration" />
+			<role name="Request()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::isActivated(com.github.javaparser.printer.configuration.ConfigurationOption):boolean" />
+			<role name="Request()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::get(com.github.javaparser.printer.configuration.ConfigurationOption):java.util.Optional" />
+			<role name="Request()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::get():java.util.Set" />
+			<role name="Request()" element="com.github.javaparser.printer.configuration.PrettyPrinterConfiguration::removeOption(com.github.javaparser.printer.configuration.ConfigurationOption):com.github.javaparser.printer.configuration.PrinterConfiguration" />
+		</instance>
+	</pattern>
+	<pattern name="Chain of Responsibility">
+		<instance>
+			<role name="Handler" element="com.github.javaparser.ast.Node" />
+			<role name="successor" element="com.github.javaparser.ast.Node::parentNode:com.github.javaparser.ast.Node" />
+		</instance>
+	</pattern>
+</system>
+

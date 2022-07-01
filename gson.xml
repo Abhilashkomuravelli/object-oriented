@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method">
+		<instance>
+			<role name="Creator" element="com.google.gson.LongSerializationPolicy" />
+			<role name="FactoryMethod()" element="com.google.gson.LongSerializationPolicy::serialize(java.lang.Long):com.google.gson.JsonElement" />
+		</instance>
+		<instance>
+			<role name="Creator" element="com.google.gson.TypeAdapterFactory" />
+			<role name="FactoryMethod()" element="com.google.gson.TypeAdapterFactory::create(, com.google.gson.reflect.TypeToken):com.google.gson.TypeAdapter" />
+		</instance>
+	</pattern>
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="com.google.gson.internal.bind.DefaultDateTypeAdapter$DateType" />
+			<role name="uniqueInstance" element="com.google.gson.internal.bind.DefaultDateTypeAdapter$DateType::DATE:com.google.gson.internal.bind.DefaultDateTypeAdapter$DateType" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.google.gson.internal.Excluder" />
+			<role name="uniqueInstance" element="com.google.gson.internal.Excluder::DEFAULT:com.google.gson.internal.Excluder" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.google.gson.internal.JsonReaderInternalAccess" />
+			<role name="uniqueInstance" element="com.google.gson.internal.JsonReaderInternalAccess::INSTANCE:com.google.gson.internal.JsonReaderInternalAccess" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="com.google.gson.JsonNull" />
+			<role name="uniqueInstance" element="com.google.gson.JsonNull::INSTANCE:com.google.gson.JsonNull" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adapter" element="com.google.gson.internal.bind.TreeTypeAdapter" />
+			<role name="Adaptee" element="com.google.gson.reflect.TypeToken" />
+			<role name="adaptee" element="com.google.gson.internal.bind.TreeTypeAdapter::typeToken:com.google.gson.reflect.TypeToken" />
+			<role name="Request()" element="com.google.gson.internal.bind.TreeTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+			<role name="Request()" element="com.google.gson.internal.bind.TreeTypeAdapter::write(com.google.gson.stream.JsonWriter, T):void" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.google.gson.internal.bind.TreeTypeAdapter" />
+			<role name="Adaptee" element="com.google.gson.JsonDeserializer" />
+			<role name="adaptee" element="com.google.gson.internal.bind.TreeTypeAdapter::deserializer:com.google.gson.JsonDeserializer" />
+			<role name="Request()" element="com.google.gson.internal.bind.TreeTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adapter" element="com.google.gson.internal.bind.TreeTypeAdapter" />
+			<role name="Adaptee" element="com.google.gson.JsonSerializer" />
+			<role name="adaptee" element="com.google.gson.internal.bind.TreeTypeAdapter::serializer:com.google.gson.JsonSerializer" />
+			<role name="Request()" element="com.google.gson.internal.bind.TreeTypeAdapter::write(com.google.gson.stream.JsonWriter, T):void" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.google.gson.internal.ConstructorConstructor" />
+			<role name="Adapter" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory" />
+			<role name="adaptee" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory::constructorConstructor:com.google.gson.internal.ConstructorConstructor" />
+			<role name="Request()" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory::create(, com.google.gson.reflect.TypeToken):com.google.gson.TypeAdapter" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.google.gson.internal.ConstructorConstructor" />
+			<role name="Adapter" element="com.google.gson.internal.bind.CollectionTypeAdapterFactory" />
+			<role name="adaptee" element="com.google.gson.internal.bind.CollectionTypeAdapterFactory::constructorConstructor:com.google.gson.internal.ConstructorConstructor" />
+			<role name="Request()" element="com.google.gson.internal.bind.CollectionTypeAdapterFactory::create(, com.google.gson.reflect.TypeToken):com.google.gson.TypeAdapter" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.google.gson.internal.ConstructorConstructor" />
+			<role name="Adapter" element="com.google.gson.internal.bind.MapTypeAdapterFactory" />
+			<role name="adaptee" element="com.google.gson.internal.bind.MapTypeAdapterFactory::constructorConstructor:com.google.gson.internal.ConstructorConstructor" />
+			<role name="Request()" element="com.google.gson.internal.bind.MapTypeAdapterFactory::create(, com.google.gson.reflect.TypeToken):com.google.gson.TypeAdapter" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.google.gson.internal.ObjectConstructor" />
+			<role name="Adapter" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter" />
+			<role name="adaptee" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter::constructor:com.google.gson.internal.ObjectConstructor" />
+			<role name="Request()" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.google.gson.ToNumberStrategy" />
+			<role name="Adapter" element="com.google.gson.internal.bind.ObjectTypeAdapter" />
+			<role name="adaptee" element="com.google.gson.internal.bind.ObjectTypeAdapter::toNumberStrategy:com.google.gson.ToNumberStrategy" />
+			<role name="Request()" element="com.google.gson.internal.bind.ObjectTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Adaptee" element="com.google.gson.internal.UnsafeAllocator" />
+			<role name="Adapter" element="com.google.gson.internal.ConstructorConstructor$16" />
+			<role name="adaptee" element="com.google.gson.internal.ConstructorConstructor$16::unsafeAllocator:com.google.gson.internal.UnsafeAllocator" />
+			<role name="Request()" element="com.google.gson.internal.ConstructorConstructor$16::construct():java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Component" element="com.google.gson.TypeAdapter" />
+			<role name="Decorator" element="com.google.gson.Gson$FutureTypeAdapter" />
+			<role name="component" element="com.google.gson.Gson$FutureTypeAdapter::delegate:com.google.gson.TypeAdapter" />
+			<role name="Operation()" element="com.google.gson.Gson$FutureTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+			<role name="Operation()" element="com.google.gson.Gson$FutureTypeAdapter::write(com.google.gson.stream.JsonWriter, T):void" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.google.gson.TypeAdapter" />
+			<role name="Decorator" element="com.google.gson.internal.bind.ArrayTypeAdapter" />
+			<role name="component" element="com.google.gson.internal.bind.ArrayTypeAdapter::componentTypeAdapter:com.google.gson.TypeAdapter" />
+			<role name="Operation()" element="com.google.gson.internal.bind.ArrayTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Component" element="com.google.gson.TypeAdapter" />
+			<role name="Decorator" element="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper" />
+			<role name="component" element="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper::delegate:com.google.gson.TypeAdapter" />
+			<role name="Operation()" element="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+			<role name="Operation()" element="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper::write(com.google.gson.stream.JsonWriter, T):void" />
+		</instance>
+	</pattern>
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.TreeTypeAdapter" />
+			<role name="State" element="com.google.gson.JsonDeserializer" />
+			<role name="state" element="com.google.gson.internal.bind.TreeTypeAdapter::deserializer:com.google.gson.JsonDeserializer" />
+			<role name="Request()" element="com.google.gson.internal.bind.TreeTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.TreeTypeAdapter" />
+			<role name="State" element="com.google.gson.JsonSerializer" />
+			<role name="state" element="com.google.gson.internal.bind.TreeTypeAdapter::serializer:com.google.gson.JsonSerializer" />
+			<role name="Request()" element="com.google.gson.internal.bind.TreeTypeAdapter::write(com.google.gson.stream.JsonWriter, T):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.DefaultDateTypeAdapter" />
+			<role name="State" element="com.google.gson.internal.bind.DefaultDateTypeAdapter$DateType" />
+			<role name="state" element="com.google.gson.internal.bind.DefaultDateTypeAdapter::dateType:com.google.gson.internal.bind.DefaultDateTypeAdapter$DateType" />
+			<role name="Request()" element="com.google.gson.internal.bind.DefaultDateTypeAdapter::read(com.google.gson.stream.JsonReader):java.util.Date" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter" />
+			<role name="State" element="com.google.gson.internal.ObjectConstructor" />
+			<role name="state" element="com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter::constructor:com.google.gson.internal.ObjectConstructor" />
+			<role name="Request()" element="com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter::read(com.google.gson.stream.JsonReader):java.util.Collection" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter" />
+			<role name="State" element="com.google.gson.internal.ObjectConstructor" />
+			<role name="state" element="com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter::constructor:com.google.gson.internal.ObjectConstructor" />
+			<role name="Request()" element="com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter::read(com.google.gson.stream.JsonReader):java.util.Map" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter" />
+			<role name="State" element="com.google.gson.internal.ObjectConstructor" />
+			<role name="state" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter::constructor:com.google.gson.internal.ObjectConstructor" />
+			<role name="Request()" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy">
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.NumberTypeAdapter" />
+			<role name="Strategy" element="com.google.gson.ToNumberStrategy" />
+			<role name="strategy" element="com.google.gson.internal.bind.NumberTypeAdapter::toNumberStrategy:com.google.gson.ToNumberStrategy" />
+			<role name="ContextInterface()" element="com.google.gson.internal.bind.NumberTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Number" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.ObjectTypeAdapter" />
+			<role name="Strategy" element="com.google.gson.ToNumberStrategy" />
+			<role name="strategy" element="com.google.gson.internal.bind.ObjectTypeAdapter::toNumberStrategy:com.google.gson.ToNumberStrategy" />
+			<role name="ContextInterface()" element="com.google.gson.internal.bind.ObjectTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+		</instance>
+		<instance>
+			<role name="Context" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory" />
+			<role name="Strategy" element="com.google.gson.FieldNamingStrategy" />
+			<role name="strategy" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory::fieldNamingPolicy:com.google.gson.FieldNamingStrategy" />
+			<role name="ContextInterface()" element="com.google.gson.internal.bind.ReflectiveTypeAdapterFactory::getFieldNames(java.lang.reflect.Field):java.util.List" />
+		</instance>
+	</pattern>
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="com.google.gson.TypeAdapter" />
+			<role name="TemplateMethod()" element="com.google.gson.TypeAdapter::toJson(java.io.Writer, T):void" />
+			<role name="TemplateMethod()" element="com.google.gson.TypeAdapter::toJsonTree(T):com.google.gson.JsonElement" />
+			<role name="TemplateMethod()" element="com.google.gson.TypeAdapter::fromJson(java.io.Reader):java.lang.Object" />
+			<role name="TemplateMethod()" element="com.google.gson.TypeAdapter::fromJsonTree(com.google.gson.JsonElement):java.lang.Object" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy" />
+	<pattern name="Proxy2">
+		<instance>
+			<role name="Proxy" element="com.google.gson.internal.bind.ArrayTypeAdapter" />
+			<role name="RealSubject" element="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper" />
+			<role name="Subject" element="com.google.gson.TypeAdapter" />
+			<role name="subject" element="com.google.gson.internal.bind.ArrayTypeAdapter::componentTypeAdapter:com.google.gson.TypeAdapter" />
+			<role name="Request()" element="com.google.gson.internal.bind.ArrayTypeAdapter::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+			<role name="subject" element="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper::delegate:com.google.gson.TypeAdapter" />
+			<role name="Request()" element="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper::read(com.google.gson.stream.JsonReader):java.lang.Object" />
+			<role name="Request()" element="com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper::write(com.google.gson.stream.JsonWriter, T):void" />
+		</instance>
+	</pattern>
+	<pattern name="Chain of Responsibility" />
+</system>
+

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<pattern name="Factory Method" />
+	<pattern name="Prototype" />
+	<pattern name="Singleton">
+		<instance>
+			<role name="Singleton" element="org.hamcrest.Description" />
+			<role name="uniqueInstance" element="org.hamcrest.Description::NONE:org.hamcrest.Description" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.hamcrest.text.IsBlankString" />
+			<role name="uniqueInstance" element="org.hamcrest.text.IsBlankString::BLANK_INSTANCE:org.hamcrest.text.IsBlankString" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.hamcrest.text.IsEmptyString" />
+			<role name="uniqueInstance" element="org.hamcrest.text.IsEmptyString::INSTANCE:org.hamcrest.text.IsEmptyString" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.hamcrest.Description" />
+			<role name="uniqueInstance" element="org.hamcrest.Description::NONE:org.hamcrest.Description" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.hamcrest.text.IsBlankString" />
+			<role name="uniqueInstance" element="org.hamcrest.text.IsBlankString::BLANK_INSTANCE:org.hamcrest.text.IsBlankString" />
+		</instance>
+		<instance>
+			<role name="Singleton" element="org.hamcrest.text.IsEmptyString" />
+			<role name="uniqueInstance" element="org.hamcrest.text.IsEmptyString::INSTANCE:org.hamcrest.text.IsEmptyString" />
+		</instance>
+	</pattern>
+	<pattern name="(Object)Adapter">
+		<instance>
+			<role name="Adaptee" element="org.hamcrest.Description" />
+			<role name="Adapter" element="org.hamcrest.Condition$Matched" />
+			<role name="adaptee" element="org.hamcrest.Condition$Matched::mismatch:org.hamcrest.Description" />
+			<role name="Request()" element="org.hamcrest.Condition$Matched::matching(org.hamcrest.Matcher, java.lang.String):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Command" />
+	<pattern name="Composite" />
+	<pattern name="Decorator">
+		<instance>
+			<role name="Decorator" element="org.hamcrest.core.DescribedAs" />
+			<role name="Component" element="org.hamcrest.Matcher" />
+			<role name="component" element="org.hamcrest.core.DescribedAs::matcher:org.hamcrest.Matcher" />
+			<role name="Operation()" element="org.hamcrest.core.DescribedAs::matches(java.lang.Object):boolean" />
+			<role name="Operation()" element="org.hamcrest.core.DescribedAs::describeMismatch(java.lang.Object, org.hamcrest.Description):void" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.hamcrest.core.Is" />
+			<role name="Component" element="org.hamcrest.Matcher" />
+			<role name="component" element="org.hamcrest.core.Is::matcher:org.hamcrest.Matcher" />
+			<role name="Operation()" element="org.hamcrest.core.Is::matches(java.lang.Object):boolean" />
+			<role name="Operation()" element="org.hamcrest.core.Is::describeMismatch(java.lang.Object, org.hamcrest.Description):void" />
+		</instance>
+		<instance>
+			<role name="Decorator" element="org.hamcrest.core.IsNot" />
+			<role name="Component" element="org.hamcrest.Matcher" />
+			<role name="component" element="org.hamcrest.core.IsNot::matcher:org.hamcrest.Matcher" />
+			<role name="Operation()" element="org.hamcrest.core.IsNot::matches(java.lang.Object):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Observer" />
+	<pattern name="State">
+		<instance>
+			<role name="State" element="org.hamcrest.Matcher" />
+			<role name="Context" element="org.hamcrest.integration.EasyMock2Adapter" />
+			<role name="state" element="org.hamcrest.integration.EasyMock2Adapter::hamcrestMatcher:org.hamcrest.Matcher" />
+			<role name="Request()" element="org.hamcrest.integration.EasyMock2Adapter::matches(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="State" element="org.hamcrest.Matcher" />
+			<role name="Context" element="org.hamcrest.integration.JMock1Adapter" />
+			<role name="state" element="org.hamcrest.integration.JMock1Adapter::hamcrestMatcher:org.hamcrest.Matcher" />
+			<role name="Request()" element="org.hamcrest.integration.JMock1Adapter::eval(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="State" element="org.hamcrest.Matcher" />
+			<role name="Context" element="org.hamcrest.number.BigDecimalCloseToTest" />
+			<role name="state" element="org.hamcrest.number.BigDecimalCloseToTest::matcher:org.hamcrest.Matcher" />
+			<role name="Request()" element="org.hamcrest.number.BigDecimalCloseToTest::testEvaluatesToTrueIfArgumentIsEqualToABigDecimalWithinSomeError():void" />
+			<role name="Request()" element="org.hamcrest.number.BigDecimalCloseToTest::testEvaluatesToTrueIfArgumentHasDifferentScale():void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.hamcrest.collection.IsIterableContainingInAnyOrder$Matching" />
+			<role name="State" element="org.hamcrest.Description" />
+			<role name="state" element="org.hamcrest.collection.IsIterableContainingInAnyOrder$Matching::mismatchDescription:org.hamcrest.Description" />
+			<role name="Request()" element="org.hamcrest.collection.IsIterableContainingInAnyOrder$Matching::matches(S):boolean" />
+			<role name="Request()" element="org.hamcrest.collection.IsIterableContainingInAnyOrder$Matching::isFinished(java.lang.Iterable):boolean" />
+			<role name="Request()" element="org.hamcrest.collection.IsIterableContainingInAnyOrder$Matching::isMatched(S):boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.hamcrest.collection.IsIterableContainingInOrder$MatchSeries" />
+			<role name="State" element="org.hamcrest.Description" />
+			<role name="state" element="org.hamcrest.collection.IsIterableContainingInOrder$MatchSeries::mismatchDescription:org.hamcrest.Description" />
+			<role name="Request()" element="org.hamcrest.collection.IsIterableContainingInOrder$MatchSeries::matches(F):boolean" />
+			<role name="Request()" element="org.hamcrest.collection.IsIterableContainingInOrder$MatchSeries::isFinished():boolean" />
+			<role name="Request()" element="org.hamcrest.collection.IsIterableContainingInOrder$MatchSeries::describeMismatch(org.hamcrest.Matcher, F):void" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.hamcrest.collection.IsIterableContainingInRelativeOrder$MatchSeriesInRelativeOrder" />
+			<role name="State" element="org.hamcrest.Description" />
+			<role name="state" element="org.hamcrest.collection.IsIterableContainingInRelativeOrder$MatchSeriesInRelativeOrder::mismatchDescription:org.hamcrest.Description" />
+			<role name="Request()" element="org.hamcrest.collection.IsIterableContainingInRelativeOrder$MatchSeriesInRelativeOrder::isFinished():boolean" />
+		</instance>
+		<instance>
+			<role name="Context" element="org.hamcrest.Condition$Matched" />
+			<role name="State" element="org.hamcrest.Description" />
+			<role name="state" element="org.hamcrest.Condition$Matched::mismatch:org.hamcrest.Description" />
+			<role name="Request()" element="org.hamcrest.Condition$Matched::matching(org.hamcrest.Matcher, java.lang.String):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Strategy" />
+	<pattern name="Bridge" />
+	<pattern name="Template Method">
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.BaseDescription" />
+			<role name="TemplateMethod()" element="org.hamcrest.BaseDescription::appendValue(java.lang.Object):org.hamcrest.Description" />
+			<role name="TemplateMethod()" element="org.hamcrest.BaseDescription::append(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.hamcrest.BaseDescription::toJavaSyntax(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.hamcrest.BaseDescription::toJavaSyntax(char):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.Condition" />
+			<role name="TemplateMethod()" element="org.hamcrest.Condition::matching(org.hamcrest.Matcher):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.core.SubstringMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.core.SubstringMatcher::matchesSafely(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.DiagnosingMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.DiagnosingMatcher::matches(java.lang.Object):boolean" />
+			<role name="TemplateMethod()" element="org.hamcrest.DiagnosingMatcher::describeMismatch(java.lang.Object, org.hamcrest.Description):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.FeatureMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.FeatureMatcher::matchesSafely(T, org.hamcrest.Description):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.TypeSafeDiagnosingMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.TypeSafeDiagnosingMatcher::matches(java.lang.Object):boolean" />
+			<role name="TemplateMethod()" element="org.hamcrest.TypeSafeDiagnosingMatcher::describeMismatch(java.lang.Object, org.hamcrest.Description):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.TypeSafeMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.TypeSafeMatcher::matches(java.lang.Object):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.BaseDescription" />
+			<role name="TemplateMethod()" element="org.hamcrest.BaseDescription::appendValue(java.lang.Object):org.hamcrest.Description" />
+			<role name="TemplateMethod()" element="org.hamcrest.BaseDescription::append(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.hamcrest.BaseDescription::toJavaSyntax(java.lang.String):void" />
+			<role name="TemplateMethod()" element="org.hamcrest.BaseDescription::toJavaSyntax(char):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.Condition" />
+			<role name="TemplateMethod()" element="org.hamcrest.Condition::matching(org.hamcrest.Matcher):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.core.SubstringMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.core.SubstringMatcher::matchesSafely(java.lang.String):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.DiagnosingMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.DiagnosingMatcher::matches(java.lang.Object):boolean" />
+			<role name="TemplateMethod()" element="org.hamcrest.DiagnosingMatcher::describeMismatch(java.lang.Object, org.hamcrest.Description):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.FeatureMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.FeatureMatcher::matchesSafely(T, org.hamcrest.Description):boolean" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.TypeSafeDiagnosingMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.TypeSafeDiagnosingMatcher::matches(java.lang.Object):boolean" />
+			<role name="TemplateMethod()" element="org.hamcrest.TypeSafeDiagnosingMatcher::describeMismatch(java.lang.Object, org.hamcrest.Description):void" />
+		</instance>
+		<instance>
+			<role name="AbstractClass" element="org.hamcrest.TypeSafeMatcher" />
+			<role name="TemplateMethod()" element="org.hamcrest.TypeSafeMatcher::matches(java.lang.Object):boolean" />
+		</instance>
+	</pattern>
+	<pattern name="Visitor" />
+	<pattern name="Proxy">
+		<instance>
+			<role name="Proxy" element="org.hamcrest.core.IsCollectionContaining" />
+			<role name="RealSubject" element="org.hamcrest.core.IsIterableContaining" />
+			<role name="Request()" element="org.hamcrest.core.IsCollectionContaining::describeTo(org.hamcrest.Description):void" />
+		</instance>
+	</pattern>
+	<pattern name="Proxy2" />
+	<pattern name="Chain of Responsibility" />
+</system>
+
